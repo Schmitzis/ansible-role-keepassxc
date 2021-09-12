@@ -1,0 +1,50 @@
+---
+- name: CONFIGURE | Use entry title to match windows for global Auto-Type
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoTypeEntryTitleMatch"
+    value: "{{ use_entry_title_to_match_windows_for_global_auto_type }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Use entry URL to match windows for global Auto-Type
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoTypeEntryURLMatch"
+    value: "{{ use_entry_url_to_match_windows_for_global_auto_type }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Always ask before performing Auto-Type
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "AutotypeAsk"
+    value: "{{ always_ask_before_performing_auto_type }}"
+    no_extra_spaces: True
+
+# - name: CONFIGURE | Global Auto-Type shortcut
+#   community.general.ini_file:
+#     path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+#     section: "General"
+#     option: "GlobalAutoTypeKey"
+#     value: "65"
+#     option: "GlobalAutoTypeModifiers"
+#     value: "167772160"
+#     no_extra_spaces: True
+
+- name: CONFIGURE | Auto-Type start delay
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoTypeStartDelay"
+    value: "{{ auto_type_start_delay }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Auto-Type typing delay
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoTypeDelay"
+    value: "{{ auto_type_typing_delay }}"
+    no_extra_spaces: True

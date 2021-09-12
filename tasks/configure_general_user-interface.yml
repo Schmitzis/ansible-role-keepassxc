@@ -1,0 +1,76 @@
+---
+- name: CONFIGURE | Language
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "Language"
+    value: "{{ language }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Toolbar button style
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "ToolButtonStyle"
+    # {
+    #   'Icon only': '0',
+    #   'Text only': '1',
+    #   'Text beside icon': '2',
+    #   'Text under icon': '3',
+    #   'Follow style': '4',
+    # }
+    value: "{{ toolbar_button_style }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Movable toolbar
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "MoveableToolbar"
+    value: "{{ movable_toolbar }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Use monospaced font for notes
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "MonospaceNotes"
+    value: "{{ use_monospaced_font_for_notes }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Minimise instead of app exit
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "MinimizeOnClose"
+    value: "{{ minimize_instead_of_app_exit }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Show a system tray icon
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "ShowTrayIcon"
+    value: "{{ show_a_system_tray_icon }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Tray icon type
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "TrayIconAppearance"
+    # {
+    #   'Monochrome (light)': 'monochrome-light',
+    #   'Monochrome (dark)': 'monochrome-dark',
+    #   'Colourful': 'colorful',
+    # }
+    value: "{{ tray_icon_type }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Hide window to system tray when minimised
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "MinimizeToTray"
+    value: "{{ hide_window_to_system_tray_when_minimized }}"
+    no_extra_spaces: True

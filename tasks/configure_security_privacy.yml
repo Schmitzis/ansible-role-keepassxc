@@ -1,0 +1,9 @@
+---
+- name: CONFIGURE | Use DuckDuckGo service to download website icons
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "IconDownloadFallback"
+    value: "{{ use_duckduckgo_service_to_download_website_icons }}"
+    no_extra_spaces: True
+

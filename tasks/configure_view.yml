@@ -1,0 +1,17 @@
+---
+- name: CONFIGURE | Theme
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "ApplicationTheme"
+    value: "{{ theme }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Compact mode
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "CompactMode"
+    value: "{{ compact_mode }}"
+    no_extra_spaces: True
+

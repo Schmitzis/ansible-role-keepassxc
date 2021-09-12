@@ -1,0 +1,61 @@
+---
+- name: CONFIGURE | Enable browser integration
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "Enabled"
+    value: "{{ enable_browser_integration }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Request to unlock the database if it is locked
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "UnlockDatabase"
+    value: "{{ request_to_unlock_the_database_if_it_is_locked }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Match URL scheme
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "MatchUrlScheme"
+    value: "{{ match_url_scheme }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Return only best matching credentials
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "BestMatchOnly"
+    value: "{{ return_only_best_matching_credentials }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Allow returning expired credentials
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "AllowExpiredCredentials"
+    value: "{{ allow_returning_expired_credentials }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Search in all opened databses for matching credentials
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "SearchInAllDatabases"
+    value: "{{ search_in_all_opened_databases_for_matching_credentials }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Sort matching credentials by
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "SortByUsername"
+    # {
+    #   "Title": "false",
+    #   "Username": "true",
+    # }
+    value: "{{ sort_matching_credentials_by }}"
+    no_extra_spaces: True
+

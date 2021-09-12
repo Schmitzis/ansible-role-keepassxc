@@ -1,0 +1,49 @@
+---
+- name: CONFIGURE | Clear clipboard
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "ClearClipboard"
+    value: "{{ clear_clipboard }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Clear clipboard after X seconds
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "ClearClipboardTimeout"
+    value: "{{ clear_clipboard_after }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Lock databases after inactivity
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "LockDatabaseIdle"
+    value: "{{ lock_databases_after_inactivity }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Lock databases after inactivity of X seconds
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "LockDatabaseIdleSeconds"
+    value: "{{ lock_databases_after_inactivity_of }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Clear search query
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "ClearSearch"
+    value: "{{ clear_search_query }}"
+    no_extra_spaces: True
+
+
+- name: CONFIGURE | Clear search query after X minutes
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "ClearSearchTimeout"
+    value: "{{ clear_search_query_after }}"
+    no_extra_spaces: True

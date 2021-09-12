@@ -1,0 +1,49 @@
+---
+- name: CONFIGURE | Automatically save after every change
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoSaveAfterEveryChange"
+    value: "{{ automatically_save_after_every_change }}"
+    no_extra_spaces: True
+
+
+- name: CONFIGURE | Automatically save when locking database
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoSaveOnExit"
+    value: "{{ automatically_save_when_locking_database }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Automatically save non-data changes when locking database
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoSaveNonDataChanges"
+    value: "{{ automatically_save_non_data_changes_when_locking_database }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Backup database file before saving
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "BackupBeforeSave"
+    value: "{{ backup_database_file_before_saving }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Automatically reload the database when modified externally
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "AutoReloadOnChange"
+    value: "{{ automatically_reload_the_database_when_modified_externally }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Safely save database files
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "UseAtomicSaves"
+    value: "{{ safely_save_database_files }}"
+    no_extra_spaces: True

@@ -1,0 +1,34 @@
+---
+- name: CONFIGURE | Use group icon on entry creation
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "UseGroupIconOnEntryCreation"
+    value: "{{ use_group_icon_on_entry_creation }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Minimise when opening a URL
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "MinimizeOnOpenUrl"
+    value: "{{ minimize_when_opening_a_url }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Hide window when copying to clipboard
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "HideWindowOnCopy"
+    value: "{{ hide_window_when_copying_to_clipboard }}"
+      #    option: "DropToBackgroudOnCopy"
+      #    value: "true"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Favicon download timeout
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "FaviconDownloadTimeout"
+    value: "{{ favicon_download_timeout }}"
+    no_extra_spaces: True

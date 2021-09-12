@@ -1,0 +1,91 @@
+---
+keepassxc_config_dir: "$HOME/.config/keepassxc"
+
+# View
+theme: "auto"
+compact_mode: "false"
+
+# General/Startup
+start_only_a_single_instance_of_keepassxc: "true"
+automatically_launch_keepassxc_at_system_startup: "false"
+minimize_window_at_application_startup: "false"
+minimize_window_after_unlocking_database: "false"
+  #remember_previously_used_database: "true"
+load_previously_opened_databases_on_startup: "true"
+remember_database_key_files_and_security_dongles: "true"
+
+# General/File Management
+automatically_save_after_every_change: "true"
+automatically_save_when_locking_database: "true"
+automatically_save_non_data_changes_when_locking_database: "true"
+backup_database_file_before_saving: "false"
+automatically_reload_the_database_when_modified_externally: "true"
+safely_save_database_files: "true"
+
+# General/Entry Management
+use_group_icon_on_entry_creation: "true"
+minimize_when_opening_a_url: "false"
+hide_window_when_copying_to_clipboard: "false" 
+favicon_download_timeout: "10"
+
+# General/User Interface
+language: "system"
+toolbar_button_style: "0"
+movable_toolbar: "false"
+use_monospaced_font_for_notes: "false"
+minimize_instead_of_app_exit: "false"
+show_a_system_tray_icon: "false"
+tray_icon_type: "monochrome-light"
+hide_window_to_system_tray_when_minimized: "false"
+
+# General/Auto-Type
+use_entry_title_to_match_windows_for_global_auto_type: "true"
+use_entry_url_to_match_windows_for_global_auto_type: "true"
+always_ask_before_performing_auto_type: "true"
+  #global_auto_type_shortcut: ""
+auto_type_start_delay: "500"
+auto_type_typing_delay: "25"
+
+# Security/Timeouts
+clear_clipboard: "true"
+clear_clipboard_after: "10"
+lock_databases_after_inactivity: "false"
+lock_databases_after_inactivity_of: "240"
+clear_search_query: "true"
+clear_search_query_after: "5"
+
+# Security/Convenience
+lock_databases_when_session_is_locked_or_lid_is_closed: "true"
+lock_databases_after_minimizing_the_window: "false"
+re_lock_previously_locked_database_after_performing_auto_type: "false"
+require_password_repeat_when_it_is_visible: "true"
+hide_passwords_when_editing_them: "true"
+use_placeholder_for_empty_password_fields: "false"
+hide_passwords_in_the_entry_preview_panel: "true"
+hide_entry_notes_by_default: "false"
+
+# Security/Privacy
+use_duckduckgo_service_to_download_website_icons: "false"
+
+# Browser Integration/General
+enable_browser_integration: "false"
+request_to_unlock_the_database_if_it_is_locked: "true"
+match_url_scheme: "true"
+return_only_best_matching_credentials: "false"
+allow_returning_expired_credentials: "false"
+search_in_all_opened_databases_for_matching_credentials: "false"
+sort_matching_credentials_by: "false"
+
+# Browser Integration/Advanced
+never_ask_before_accessing_credentials: "false"
+never_ask_before_updating_credentials: "false"
+do_not_ask_permission_for_http_basic_auth: "false"
+return_advanced_string_fields_which_start_with_kph: "true"
+do_not_prompt_for_keepasshttp_settings_migration: "false"
+update_native_messaging_manifest_files_at_startup: "true"
+use_a_custom_proxy_location: "false"
+custom_proxy_location: ""
+
+# SSH Agent
+enable_ssh_agent_integration: "false"
+

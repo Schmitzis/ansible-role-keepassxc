@@ -1,0 +1,65 @@
+---
+- name: CONFIGURE | Never ask before accessing credentials
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "AlwaysAllowAccess"
+    value: "{{ never_ask_before_accessing_credentials }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Never ask before updating credentials
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "AlwaysAllowUpdate"
+    value: "{{ never_ask_before_updating_credentials }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Do not ask permission for HTTP Basic Auth
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "HttpAuthPermission"
+    value: "{{ do_not_ask_permission_for_http_basic_auth }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Return advanced string fields which start with KPH
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "SupportKphFields"
+    value: "{{ return_advanced_string_fields_which_start_with_kph }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Do not prompt for KeePassHTTP settings migration
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "NoMigrationPrompt"
+    value: "{{ do_not_prompt_for_keepasshttp_settings_migration }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Update native messaging manifest files at startup
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "UpdateBinaryPath"
+    value: "{{ update_native_messaging_manifest_files_at_startup }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Use a custom proxy location
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "UseCustomProxy"
+    value: "{{ use_a_custom_proxy_location }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Custom proxy location
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Browser"
+    option: "CustomProxyLocation"
+    value: "{{ custom_proxy_location }}"
+    no_extra_spaces: True
+

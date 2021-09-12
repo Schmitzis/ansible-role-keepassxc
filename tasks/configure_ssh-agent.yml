@@ -1,0 +1,9 @@
+---
+- name: CONFIGURE | Enable SSH Agent integration
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "SSHAgent"
+    option: "Enabled"
+    value: "{{ enable_ssh_agent_integration }}"
+    no_extra_spaces: True
+

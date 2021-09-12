@@ -1,0 +1,65 @@
+---
+- name: CONFIGURE | Lock databases when session is locked or lid is closed
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "LockDatabaseScreenLock"
+    value: "{{ lock_databases_when_session_is_locked_or_lid_is_closed }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Lock databases after minimising the window
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "LockDatabaseMinimize"
+    value: "{{ lock_databases_after_minimizing_the_window }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Re-lock previously locked database after performing Auto-Type
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "RelockAutoType"
+    value: "{{ re_lock_previously_locked_database_after_performing_auto_type }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Require password repeat when it is visible
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "PasswordsRepeatVisible"
+    value: "{{ require_password_repeat_when_it_is_visible }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Hide passwords when editing them
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "PasswordsHidden"
+    value: "{{ hide_passwords_when_editing_them }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Use placeholder for empty password fields
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "PasswordEmptyPlaceholder"
+    value: "{{ use_placeholder_for_empty_password_fields }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Hide passwords in the entry preview panel
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "HidePasswordPreviewPanel"
+    value: "{{ hide_passwords_in_the_entry_preview_panel }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Hide entry notes by default
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "Security"
+    option: "Security_HideNotes"
+    value: "{{ hide_entry_notes_by_default }}"
+    no_extra_spaces: True
+

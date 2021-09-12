@@ -1,0 +1,46 @@
+---
+- name: CONFIGURE | Start only a single instance of KeepassXC
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "SingleInstance"
+    value: "{{ start_only_a_single_instance_of_keepassxc }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Automatically launch KeepassXC at system startup
+  ansible.builtin.copy:
+    src: org.keepassxc.KeePassXC.desktop
+    dest: $HOME/.config/autostart/org.keepassxc.KeePassXC.desktop
+  when: automatically_launch_keepassxc_at_system_startup == "true"
+
+- name: CONFIGURE | Minimise window at application startup
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "GUI"
+    option: "MinimizeOnStartup"
+    value: "{{ minimize_window_at_application_startup }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Minimise window after unlocking database
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "MinimizeAfterUnlock"
+    value: "{{ minimize_window_after_unlocking_database }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Load previously open databases on startup
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "RememberLastDatabases"
+    value: "{{ load_previously_opened_databases_on_startup }}"
+    no_extra_spaces: True
+
+- name: CONFIGURE | Remember database key files and security dongles
+  community.general.ini_file:
+    path: "{{ keepassxc_config_dir }}/keepassxc.ini"
+    section: "General"
+    option: "RememberLastKeyFiles"
+    value: "{{ remember_database_key_files_and_security_dongles }}"
+    no_extra_spaces: True

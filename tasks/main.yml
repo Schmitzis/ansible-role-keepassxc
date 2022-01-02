@@ -2,11 +2,10 @@
 - name: INSTALL | Install KeepassXC apt repostory
   become: True
   ansible.builtin.apt_repository:
-    repo: deb http://ppa.launchpad.net/phoerious/keepassxc/ubuntu {{ ansible_facts['lsb']['codename'] }} main
-    state: present
+    repo: ppa:phoerious/keepassxc
   when: ansible_facts['distribution'] == "Ubuntu"
 
-- name: INSTALL | Install KeepassXC from DNF repository
+- name: INSTALL | Install KeepassXC from package repository
   become: True
   ansible.builtin.package:
     name: keepassxc

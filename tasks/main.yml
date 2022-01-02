@@ -1,4 +1,11 @@
 ---
+- name: INSTALL | Install KeepassXC apt repostory
+  become: True
+  ansible.builtin.apt_repository:
+    repo: deb http://ppa.launchpad.net/phoerious/keepassxc/ubuntu {{ ansible_facts['lsb']['codename'] }} main
+    state: present
+  when: ansible_facts['distribution'] == "Ubuntu"
+
 - name: INSTALL | Install KeepassXC from DNF repository
   become: True
   ansible.builtin.package:
@@ -19,4 +26,3 @@
     - configure_browser-integration_general.yml
     - configure_browser-integration_advanced.yml
     - configure_ssh-agent.yml
-

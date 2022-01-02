@@ -1,27 +1,35 @@
 ---
-- name: INSTALL | Install KeepassXC apt repostory
-  become: True
-  ansible.builtin.apt_repository:
-    repo: ppa:phoerious/keepassxc
-  when: ansible_facts['distribution'] == "Ubuntu"
+- name: INSTALL | KeepassXC
+  tags:
+  - install
+  block:
+  - name: INSTALL | Install KeepassXC apt repostory
+    become: True
+    ansible.builtin.apt_repository:
+      repo: ppa:phoerious/keepassxc
+    when: ansible_facts['distribution'] == "Ubuntu"
 
-- name: INSTALL | Install KeepassXC from package repository
-  become: True
-  ansible.builtin.package:
-    name: keepassxc
-    state: latest
+  - name: INSTALL | Install KeepassXC from package repository
+    become: True
+    ansible.builtin.package:
+      name: keepassxc
+      state: latest
 
-- include_tasks:  "{{ item }}"
-  loop:
-    - configure_view.yml
-    - configure_general_startup.yml
-    - configure_general_file-management.yml
-    - configure_general_entry-management.yml
-    - configure_general_user-interface.yml
-    - configure_general_auto-type.yml
-    - configure_security_timeouts.yml
-    - configure_security_convenience.yml
-    - configure_security_privacy.yml
-    - configure_browser-integration_general.yml
-    - configure_browser-integration_advanced.yml
-    - configure_ssh-agent.yml
+- name: CONFIGURE | KeepassXC
+  tags:
+  - configure
+  block:
+  - include_tasks:  "{{ item }}"
+    loop:
+      - configure_view.yml
+      - configure_general_startup.yml
+      - configure_general_file-management.yml
+      - configure_general_entry-management.yml
+      - configure_general_user-interface.yml
+      - configure_general_auto-type.yml
+      - configure_security_timeouts.yml
+      - configure_security_convenience.yml
+      - configure_security_privacy.yml
+      - configure_browser-integration_general.yml
+      - configure_browser-integration_advanced.yml
+      - configure_ssh-agent.yml

@@ -15,8 +15,8 @@ They can be installed by running `ansible-galaxy collection install $COLLECTION`
 Role Variables
 --------------
 
-Too many to list here.
-See `defaults/main.py`.
+See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
+-f1 -d:` for plain list.
 
 Example Playbook
 ----------------

@@ -12,6 +12,19 @@ The following collections are required:
 
 They can be installed by running `ansible-galaxy collection install $COLLECTION`.
 
+To include this role in your `requirements.yml` file, add the following list item:
+
+```yaml
+---
+roles:
+  - name: whalej84.keepassxc
+    src: https://github.com/WhaleJ84/ansible-role-keepassxc.git
+    scm: git
+
+collections:
+  - community.general
+```
+
 Role Variables
 --------------
 

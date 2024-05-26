@@ -34,7 +34,13 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 Example Playbook
 ----------------
 
-    - hosts: localhost
-      roles:
-         - { role: whalej84.keepassxc, theme: "dark" }
+This example playbook shows how I would use this role, with custom variables to suit my needs.
 
+```yaml
+---
+- hosts: localhost
+
+  roles:
+    - role: whalej84.keepassxc
+      tags: [ keepassxc ]
+```

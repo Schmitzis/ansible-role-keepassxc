@@ -34,6 +34,7 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 | Name | Type | Description | Default |
 | ---- | ---- | ----------- | ------- |
 | theme | string | A lowercase value of [auto, light, dark, classic] to state what theme the application should launch in | "auto" |
+| compact\_mode | string | A lowercase boolean value of [true, false] to state whether the application will use the compact interface | "false" |
 
 Example Playbook
 ----------------
@@ -48,5 +49,6 @@ This example playbook shows how I would use this role, with custom variables to 
     - role: whalej84.keepassxc
       vars:
         theme: "light"
+        compact_mode: "true"
       tags: [ keepassxc ]
 ```

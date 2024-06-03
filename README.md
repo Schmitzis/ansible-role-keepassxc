@@ -31,6 +31,10 @@ Role Variables
 See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 -f1 -d:` for plain list.
 
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| theme | string | A lowercase value of [auto, light, dark, classic] to state what theme the application should launch in | "auto" |
+
 Example Playbook
 ----------------
 
@@ -42,5 +46,7 @@ This example playbook shows how I would use this role, with custom variables to 
 
   roles:
     - role: whalej84.keepassxc
+      vars:
+        theme: "light"
       tags: [ keepassxc ]
 ```

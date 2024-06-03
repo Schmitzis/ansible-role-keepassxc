@@ -35,6 +35,7 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 | ---- | ---- | ----------- | ------- |
 | theme | string | A lowercase value of [auto, light, dark, classic] to state what theme the application should launch in | "auto" |
 | compact\_mode | string | A lowercase boolean value of [true, false] to state whether the application will use the compact interface | "false" |
+| start\_only\_a\_single\_</br>instance\_of\_keepassxc | string | A lowercase boolean value of [true, false] to state whether more than one instance can launch | "true" |
 
 Example Playbook
 ----------------

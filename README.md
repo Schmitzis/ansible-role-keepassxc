@@ -37,6 +37,7 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 | compact\_mode | string | A lowercase boolean value of [true, false] to state whether the application will use the compact interface | "false" |
 | start\_only\_a\_single\_</br>instance\_of\_keepassxc | string | A lowercase boolean value of [true, false] to state whether more than one instance can launch | "true" |
 | automatically\_launch\_keepassxc</br>\_at\_system\_startup | string | A lowercase boolean value of [true, false] to state whether KeepassXC will launch at boot | "false" |
+| enable\_browser\_integration | string | A lowercase boolean value of [true, false] to state whether browser integration is enabled | "false" |
 
 Example Playbook
 ----------------
@@ -53,5 +54,6 @@ This example playbook shows how I would use this role, with custom variables to 
         theme: "light"
         compact_mode: "true"
         automatically_launch_keepassxc_at_system_startup: "true"
+        enable_browser_integration: "true"
       tags: [ keepassxc ]
 ```

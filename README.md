@@ -39,6 +39,7 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 | automatically\_launch\_keepassxc</br>\_at\_system\_startup | string | A lowercase boolean value of [true, false] to state whether KeepassXC will launch at boot | "false" |
 | minimize\_instead\_of\_app\_exit | string | A lowercase boolean value of [true, false] to state whether to minimize the application on close | "false" |
 | show\_a\_system\_tray\_icon | string | A lowercase boolean value of [true, false] to state whether to show a system tray icon | "false" |
+| tray\_icon\_type | string | A lowercase value of [monochrome-light, monochrome-dark, colorful] to state what colors the tray icon should use | "monochrome-light" |
 | enable\_browser\_integration | string | A lowercase boolean value of [true, false] to state whether browser integration is enabled | "false" |
 
 Example Playbook
@@ -58,6 +59,7 @@ This example playbook shows how I would use this role, with custom variables to 
         automatically_launch_keepassxc_at_system_startup: "true"
         minimize_instead_of_app_exit: "true"
         show_a_system_tray_icon: "true"
+        tray_icon_type: "colorful"
         enable_browser_integration: "true"
       tags: [ keepassxc ]
 ```

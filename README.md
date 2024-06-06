@@ -40,6 +40,7 @@ See *'defaults/main.yml'* or run `egrep '^[[:alpha:]_]*:' defaults/main.yml| cut
 | minimize\_instead\_of\_app\_exit | string | A lowercase boolean value of [true, false] to state whether to minimize the application on close | "false" |
 | show\_a\_system\_tray\_icon | string | A lowercase boolean value of [true, false] to state whether to show a system tray icon | "false" |
 | tray\_icon\_type | string | A lowercase value of [monochrome-light, monochrome-dark, colorful] to state what colors the tray icon should use | "monochrome-light" |
+| hide\_window\_to\_system</br>\_tray\_when\_minimized | string | A lowercase boolean value [true, false] to state if the app should minimize to system tray | "false" |
 | enable\_browser\_integration | string | A lowercase boolean value of [true, false] to state whether browser integration is enabled | "false" |
 | enable\_ssh\_agent\_integration | string | A lowercase boolean value of [true, false] to state whether to enable the SSH agent | "false" |
 
@@ -61,6 +62,7 @@ This example playbook shows how I would use this role, with custom variables to 
         minimize_instead_of_app_exit: "true"
         show_a_system_tray_icon: "true"
         tray_icon_type: "colorful"
+        hide_window_to_system_tray_when_minimized: "true"
         enable_browser_integration: "true"
         enable_ssh_agent_integration: "true"
       tags: [ keepassxc ]

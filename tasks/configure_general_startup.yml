@@ -7,10 +7,16 @@
     value: "{{ start_only_a_single_instance_of_keepassxc }}"
     no_extra_spaces: True
 
+- name: CONFIGURE | Ensure $HOME/.config/autostart exists
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.config/autostart/"
+    state: directory
+  when: automatically_launch_keepassxc_at_system_startup == "true"
+
 - name: CONFIGURE | Automatically launch KeepassXC at system startup
   ansible.builtin.copy:
     src: org.keepassxc.KeePassXC.desktop
-    dest: $HOME/.config/autostart/org.keepassxc.KeePassXC.desktop
+    dest: "{{ ansible_user_dir }}/.config/autostart/org.keepassxc.KeePassXC.desktop"
   when: automatically_launch_keepassxc_at_system_startup == "true"
 
 - name: CONFIGURE | Minimise window at application startup
